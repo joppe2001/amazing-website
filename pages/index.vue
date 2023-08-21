@@ -16,21 +16,21 @@
         <h2 class="text-3xl md:text-4xl font-bold mb-8">Our Services</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
           <nuxt-link to="/service/service-page" class="home__services-item">
-            <img src="../beach.png" alt="service-img" loading="eager">
+            <img src="../public/beach.png" alt="service-img" loading="eager">
             <div class="service-content">
               <h3 class="text-xl font-semibold mb-4">Service 1</h3>
-              <p>Descriptive text about the service. Elaborate on its benefits and features.</p>
+              <p>Descriptive text about the service. El aborate on its benefits and features.</p>
             </div>
           </nuxt-link>
           <nuxt-link to="/service/service-page" class="home__services-item ">
-            <img src="../amazing-bg.png" alt="service-img" loading="eager">
+            <img src="../public/amazing-bg.png" alt="service-img" loading="eager">
             <div class="service-content">
               <h3 class="text-xl font-semibold mb-4">Service 2</h3>
               <p>Descriptive text about the service. Elaborate on its benefits and features.</p>
             </div>
           </nuxt-link>
           <nuxt-link to="/service/service-page" class="home__services-item">
-            <img src="../better-bng.png" alt="service-img" loading="eager">
+            <img src="../public/better-bng.png" alt="service-img" loading="eager">
             <div class="service-content">
               <h3 class="text-xl font-semibold mb-4">Service 3</h3>
               <p>Descriptive text about the service. Elaborate on its benefits and features.</p>
