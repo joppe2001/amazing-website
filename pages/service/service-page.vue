@@ -1,5 +1,5 @@
 <template>
-    <div class="service-page-container mt-8">
+    <div class="service-page-container mt-8 pb-10">
         <!-- Service Content Begins Here -->
         <section class="intro container mx-auto px-6 py-20">
             <h1 class="text-4xl md:text-6xl font-bold mb-8">Service Name</h1>
@@ -22,8 +22,8 @@
             </div>
         </section>
 
-        <section class="testimonial container mx-auto px-6 py-20 bg-gray-100 rounded-lg">
-            <h2 class="text-3xl font-bold mb-8">What our clients say</h2>
+        <section class="testimonial container mx-auto px-6 py-6 bg-gray-100 rounded-lg">
+            <h2 class="text-3xl font-bold">What our clients say</h2>
             <blockquote class="p-6 border-l-4 border-blue-600">
                 <p class="mb-4">"A wonderful testimonial detailing the positive experiences of a satisfied client. Highlights the benefits and outcomes of using the service."</p>
                 <footer>
@@ -35,8 +35,6 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-
 // Define your reactive variables and methods here using Composition API
 const serviceName = ref('Service Name');
 </script>
