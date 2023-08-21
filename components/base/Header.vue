@@ -1,7 +1,7 @@
 <template>
     <header :class="{ 'header-hidden': hideHeader }" class="header bg-white shadow-md fixed w-screen">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-gray-800">BrandName</a>
+            <nuxt-link to="/" class="text-xl font-bold text-gray-800">BrandName</nuxt-link>
             <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-4 desktop-menu">
                 <nuxt-link to="/" class="text-gray-600 hover:text-gray-800">Home</nuxt-link>
