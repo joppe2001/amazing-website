@@ -1,0 +1,4 @@
+# base netlify settings 
+[build]
+  command = "yarn build"
+  publish = "dist"
