@@ -46,17 +46,15 @@ const toggleMenu = () => {
     setTimeout(() => {
         openMenu.value = !openMenu.value
         spinning.value = false
-    }, 300) // 500ms is the duration of the spin animation
+    }, 200)
 }
 
 const handleScroll = () => {
     const currentScrollTop = window.scrollY || document.documentElement.scrollTop;
 
     if (currentScrollTop > lastScrollTop) {
-        // Scrolling down
         hideHeader.value = true;
     } else {
-        // Scrolling up
         hideHeader.value = false;
     }
     
@@ -73,7 +71,18 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-/* Slide down when menu opens */
+
+.mobile-menu {
+    width: auto;
+    border-radius: 0.5rem 0 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.block {
+    text-decoration: underline grey;
+}
 .mobile-menu {
     animation: slideDown 0.3s ease-in-out forwards;
 }

@@ -66,7 +66,6 @@
       
       @include for-device(mobile) {
         margin-bottom: 1rem;
-        border: 2px solid rgba(255, 255, 255, 0.15);
         padding: 1.5rem;
       }
     }
