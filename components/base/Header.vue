@@ -1,5 +1,5 @@
 <template>
-    <header class="header bg-white shadow-md absolute w-screen">
+    <header :class="{ 'header-hidden': hideHeader }" class="header bg-white shadow-md fixed w-screen">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-xl font-bold text-gray-800">BrandName</a>
             <!-- Desktop Menu -->
@@ -36,10 +36,10 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-
 const openMenu = ref(false)
 const spinning = ref(false)
+const hideHeader = ref(false)
+let lastScrollTop = 0;
 
 const toggleMenu = () => {
     spinning.value = true
@@ -48,6 +48,28 @@ const toggleMenu = () => {
         spinning.value = false
     }, 300) // 500ms is the duration of the spin animation
 }
+
+const handleScroll = () => {
+    const currentScrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    if (currentScrollTop > lastScrollTop) {
+        // Scrolling down
+        hideHeader.value = true;
+    } else {
+        // Scrolling up
+        hideHeader.value = false;
+    }
+    
+    lastScrollTop = currentScrollTop;
+}
+
+onMounted(() => {
+    window.addEventListener('scroll', handleScroll);
+});
+
+onBeforeUnmount(() => {
+    window.removeEventListener('scroll', handleScroll);
+});
 </script>
 
 <style scoped>
@@ -100,4 +122,14 @@ const toggleMenu = () => {
         transform: translateY(-20%);
         opacity: 0;
     }
-}</style>
+}
+
+.header {
+    z-index: 999;
+    transition: transform 0.3s ease-in-out;
+}
+
+.header-hidden {
+    transform: translateY(-100%);
+}
+</style>
