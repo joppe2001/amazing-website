@@ -44,7 +44,7 @@ const serviceName = ref('Service Name');
 @import "../../mixins/for-device.scss";
 
 .service-page-container {
-    background-image: url('../../artsy-bg.png');
+    background-image: url('../../better-bng.png');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
