@@ -7,7 +7,7 @@
                 <nuxt-link to="/" class="text-gray-600 hover:text-gray-800">Home</nuxt-link>
                 <a href="#" class="text-gray-600 hover:text-gray-800">About</a>
                 <nuxt-link to="/service/service-page" class="text-gray-600 hover:text-gray-800">Services</nuxt-link>
-                <a href="#" class="text-gray-600 hover:text-gray-800">Contact</a>
+                <nuxt-link to="/contact" class="text-gray-600 hover:text-gray-800">Contact</nuxt-link>
             </div>
             <!-- Mobile menu button -->
             <button @click="toggleMenu" class="md:hidden focus:outline-none focus:border-gray-300">
@@ -29,7 +29,7 @@
                 class="block py-2 px-4 text-gray-600 hover:text-gray-800 text-right">About</nuxt-link>
             <nuxt-link to="/service/service-page" @click="openMenu = !openMenu"
                 class="block py-2 px-4 text-gray-600 hover:text-gray-800 text-right">Services</nuxt-link>
-            <nuxt-link to="" @click="openMenu = !openMenu"
+            <nuxt-link to="/contact" @click="openMenu = !openMenu"
                 class="block py-2 px-4 text-gray-600 hover:text-gray-800 text-right">Contact</nuxt-link>
         </div>
     </header>
