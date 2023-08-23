@@ -9,8 +9,6 @@
           services</nuxt-link>
       </div>
     </section>
-
-    <!-- Services/Features Section -->
     <section class="home__services py-10">
       <div class="home__services__container container mx-auto px-6">
         <h2 class="text-3xl md:text-4xl font-bold mb-8">Our Services</h2>

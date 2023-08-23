@@ -5,7 +5,7 @@
             <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-4 desktop-menu">
                 <nuxt-link to="/" class="text-gray-600 hover:text-gray-800">Home</nuxt-link>
-                <a href="#" class="text-gray-600 hover:text-gray-800">About</a>
+                <nuxt-link to="/about" class="text-gray-600 hover:text-gray-800">About</nuxt-link>
                 <nuxt-link to="/service/service-page" class="text-gray-600 hover:text-gray-800">Services</nuxt-link>
                 <nuxt-link to="/contact" class="text-gray-600 hover:text-gray-800">Contact</nuxt-link>
             </div>
@@ -25,7 +25,7 @@
             class="mobile-menu md:hidden container mx-auto px-6 py-2 mt-3 absolute right-0 rounded shadow-lg bg-white">
             <nuxt-link to="/" @click="openMenu = !openMenu"
                 class="block py-2 px-4 text-gray-600 hover:text-gray-800 text-right">Home</nuxt-link>
-            <nuxt-link to="" @click="openMenu = !openMenu"
+            <nuxt-link to="/about" @click="openMenu = !openMenu"
                 class="block py-2 px-4 text-gray-600 hover:text-gray-800 text-right">About</nuxt-link>
             <nuxt-link to="/service/service-page" @click="openMenu = !openMenu"
                 class="block py-2 px-4 text-gray-600 hover:text-gray-800 text-right">Services</nuxt-link>

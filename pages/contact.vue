@@ -1,43 +1,58 @@
 <template>
-    <div class="contact-page">
-      <h2>Contact Us</h2>
-      
-      <!-- Email Link -->
-      <a :href="'mailto:' + email + '?body=Dear joppe'">Email Us</a>
-      
-      <!-- Phone Link (For mobile devices) -->
-      <a v-if="isMobile" :href="'tel:' + phoneNumber">Call Us</a>
+    <div class="container min-h-screen  mx-auto px-4 py-8">
+      <div class="contact-page bg-white p-8 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold mb-4">Contact Us</h2>
+        
+        <a :href="'mailto:' + email + '?body=Dear joppe'" class="text-blue-600 hover:underline">Email Us</a>
+        
+        <a v-if="isMobile" :href="'tel:' + phoneNumber" class="text-blue-600 hover:underline">Call Us</a>
+      </div>
     </div>
   </template>
   
   <script setup>
-  const email = ref('joppe@touchwonders.com') // Replace with your email
-  const phoneNumber = ref('+31 6 16163382') // Replace with your phone number
-  const isMobile = ref(false)
+  import { ref, onMounted, onUnmounted } from 'vue';
   
-  let resizeHandler
+  const email = ref('joppe@touchwonders.com'); // Replace with your email
+  const phoneNumber = ref('+31 6 16163382'); // Replace with your phone number
+  const isMobile = ref(false);
+  
+  let resizeHandler;
   
   onMounted(() => {
     resizeHandler = () => {
-      isMobile.value = window.innerWidth <= 768
-    }
+      isMobile.value = typeof window !== 'undefined' && window.innerWidth <= 768;
+    };
   
-    window.addEventListener('resize', resizeHandler)
-    resizeHandler() // Initial check
-  })
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', resizeHandler);
+      resizeHandler(); // Initial check
+    }
+  });
   
   onUnmounted(() => {
-    window.removeEventListener('resize', resizeHandler)
-  })
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('resize', resizeHandler);
+    }
+  });
   </script>
   
   <style scoped>
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('../better-bng.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
   .contact-page {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
   }
   
   a {
@@ -45,5 +60,7 @@
     color: #007BFF;
     text-decoration: none;
   }
+
+  
   </style>
   
